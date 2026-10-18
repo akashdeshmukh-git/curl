@@ -1,0 +1,136 @@
+make[1]: Entering directory '/app/tests'
+Making all in certs
+make[2]: Entering directory '/app/tests/certs'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/certs'
+Making all in data
+make[2]: Entering directory '/app/tests/data'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/data'
+Making all in perf
+make[2]: Entering directory '/app/tests/perf'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/perf'
+Making all in server
+make[2]: Entering directory '/app/tests/server'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/server'
+Making all in libtest
+make[2]: Entering directory '/app/tests/libtest'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/libtest'
+Making all in http
+make[2]: Entering directory '/app/tests/http'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/http'
+Making all in unit
+make[2]: Entering directory '/app/tests/unit'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/unit'
+Making all in tunit
+make[2]: Entering directory '/app/tests/tunit'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/tunit'
+make[2]: Entering directory '/app/tests'
+(cd certs && make)
+make[3]: Entering directory '/app/tests/certs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/app/tests/certs'
+make[2]: Leaving directory '/app/tests'
+srcdir=. /usr/bin/perl -I. ./runtests.pl  -a -p ~flaky ~timing-dependent -r --retry=5 -j20 --buildinfo !776 !842 !843 !844 !845
+Using curl: ../src/curl
+********* System characteristics ********
+* curl 8.23.0-DEV (x86_64-pc-linux-gnu)
+* libcurl/8.23.0-DEV OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0
+* Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns mqtt mqtts pop3 pop3s rtsp smtp smtps telnet tftp ws wss
+* Features: alt-svc AsynchDNS brotli HSTS HTTPS-proxy IPv6 Largefile libz SSL threadsafe UnixSockets
+* Disabled: httpsig, win32-ca-searchpath, win32-ca-search-safe, override-dns, ssl-sessions
+* Host: devbox
+* System: Linux devbox 6.8.0 #1 SMP PREEMPT_DYNAMIC Fri Feb 20 20:38:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+* OS: linux
+* Perl: v5.38.2 (/usr/bin/perl)
+* Args: -a -p ~flaky ~timing-dependent -r --retry=5 -j20 --buildinfo !776 !842 !843 !844 !845
+* Jobs: 20
+* Env: Valgrind
+* Seed: 257331
+* buildinfo.configure.tool: configure
+* buildinfo.configure.args:  '--with-openssl' '--without-libpsl'
+* buildinfo.host: x86_64-pc-linux-gnu
+* buildinfo.host.cpu: x86_64
+* buildinfo.host.os: linux-gnu
+* buildinfo.target: x86_64-pc-linux-gnu
+* buildinfo.target.cpu: x86_64
+* buildinfo.target.os: linux-gnu
+* buildinfo.target.flags: UNIX GCC
+* buildinfo.compiler: GNU_C
+* buildinfo.compiler.version: 13
+* buildinfo.sysroot:
+* Servers: HTTP-IPv6 HTTP-unix FTP-IPv6
+*****************************************
+test 0064 SKIPPED: curl lacks crypto support
+test 0065 SKIPPED: curl lacks crypto support
+test 0067 SKIPPED: curl lacks NTLM support
+test 0068 SKIPPED: curl lacks NTLM support
+test 0069 SKIPPED: curl lacks NTLM support
+test 0072 SKIPPED: curl lacks crypto support
+test 0096 SKIPPED: curl lacks TrackMemory support
+test 0165 SKIPPED: curl lacks IDN support
+test 0320 SKIPPED: curl lacks PSL support
+test 0355 SKIPPED: curl lacks Debug support
+test 0356 SKIPPED: curl lacks Debug support
+test 0358 SKIPPED: curl lacks Debug support
+test 0375 SKIPPED: curl has proxy support
+test 0396 SKIPPED: curl lacks zstd support
+test 0397 SKIPPED: curl lacks zstd support
+test 0409 SKIPPED: curl lacks PSL support
+test 0445 SKIPPED: curl lacks ldap support
+test 0471 SKIPPED: curl lacks http/2 support
+test 0506 SKIPPED: curl has threaded-resolver support
+test 0558 SKIPPED: curl lacks TrackMemory support
+Warning: test573 result is ignored due to flaky
+Warning: test587 result is ignored due to flaky
+test 0632 SKIPPED: curl lacks sftp support
+test 0763 SKIPPED: curl lacks IDN support
+Warning: test766 result is ignored due to timing-dependent
+test 0777 SKIPPED: curl lacks ssl-sessions support
+test 0798 SKIPPED: curl lacks PSL support
+test 0962 SKIPPED: curl lacks IDN support
+Warning: test1086 result is ignored due to flaky
+Warning: test1086 result is ignored due to timing-dependent
+Warning: test1112 result is ignored due to timing-dependent
+Warning: test1113 result is ignored due to flaky
+Warning: test1162 result is ignored due to flaky
+Warning: test1163 result is ignored due to flaky
+Warning: test1208 result is ignored due to flaky
+Warning: test1208 result is ignored due to timing-dependent
+test 1330 SKIPPED: curl lacks TrackMemory support
+test 1451 SKIPPED: curl lacks win32 support
+test 1454 SKIPPED: curl has IPv6 support
+test 1459 SKIPPED: curl lacks sftp support
+Warning: test1510 result is ignored due to flaky
+test 1582 SKIPPED: curl lacks GSS-API support
+Warning: test1592 result is ignored due to flaky
+Warning: test1592 result is ignored due to timing-dependent
+Warning: test1631 result is ignored due to flaky
+Warning: test1632 result is ignored due to flaky
+test 1678 SKIPPED: curl lacks SSLS-EXPORT support
+test 1700 SKIPPED: curl lacks h2c support
+test 1702 SKIPPED: curl lacks h2c support
+test 1703 SKIPPED: curl lacks Unicode support
+test 1704 SKIPPED: curl lacks h2c support
+test 2033 SKIPPED: curl lacks Schannel support
+test 2056 SKIPPED: curl lacks GSS-API support
+test 2057 SKIPPED: curl lacks GSS-API support
+test 2070 SKIPPED: curl lacks Schannel support
+test 2079 SKIPPED: curl lacks Schannel support
+test 2102 SKIPPED: curl lacks override-dns support
+test 2103 SKIPPED: curl lacks override-dns support
+test 2104 SKIPPED: curl lacks override-dns support
+test 2402 SKIPPED: curl lacks http/2 support
+test 2403 SKIPPED: curl lacks http/2 support
+test 2500 SKIPPED: curl lacks http/3 support
+test 2502 SKIPPED: curl lacks http/3 support
+test 2503 SKIPPED: curl lacks http/3 support
+test 2604 SKIPPED: curl lacks sftp support
+test 4000 SKIPPED: curl lacks ECH support
+test 4001 SKIPPED: curl lacks ECH support
