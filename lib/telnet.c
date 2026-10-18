@@ -222,17 +222,51 @@ static CURLcode init_telnet(struct Curl_easy *data)
   return Curl_meta_set(data, CURL_META_TELNET_EASY, tn, telnet_easy_dtor);
 }
 
+
+static CURLcode send_telnet_buf(struct Curl_easy *data,
+                                const char *buffer, size_t outlen)
+{
+  CURLcode result = CURLE_OK;
+  size_t bytes_written = 0;
+  size_t total_written = 0;
+  struct connectdata *conn = data->conn;
+  while(!result && total_written < outlen) {
+    /* Make sure socket is writable to avoid EWOULDBLOCK condition */
+    struct pollfd pfd[1];
+    timediff_t timeout_ms = Curl_timeleft_ms(data);
+    pfd[0].fd = conn->sock[FIRSTSOCKET];
+    pfd[0].events = POLLOUT;
+    if(timeout_ms < 0)
+      return CURLE_OPERATION_TIMEDOUT;
+    /* 0 means no timeout configured; pass -1 to poll for infinite wait */
+    switch(Curl_poll(pfd, 1, timeout_ms ? timeout_ms : -1)) {
+    case -1:                    /* error, abort writing */
+      result = CURLE_SEND_ERROR;
+      break;
+    case 0:                     /* timeout */
+      result = CURLE_OPERATION_TIMEDOUT;
+      break;
+    default:                    /* write! */
+      bytes_written = 0;
+      result = Curl_xfer_send(data, buffer + total_written,
+                              outlen - total_written, FALSE, &bytes_written);
+      total_written += bytes_written;
+      break;
+    }
+  }
+  return result;
+}
+
 static void send_negotiation(struct Curl_easy *data, int cmd, int option)
 {
   unsigned char buf[3];
-  size_t nwritten;
   CURLcode result;
 
   buf[0] = CURL_IAC;
   buf[1] = (unsigned char)cmd;
   buf[2] = (unsigned char)option;
 
-  result = Curl_xfer_send(data, buf, 3, FALSE, &nwritten);
+  result = send_telnet_buf(data, (const char *)buf, 3);
   if(result)
     failf(data, "Sending data failed: %s", curl_easy_strerror(result));
 
@@ -608,9 +642,6 @@ static CURLcode send_telnet_data(struct Curl_easy *data,
   size_t i, outlen;
   const unsigned char *outbuf;
   CURLcode result = CURLE_OK;
-  size_t bytes_written;
-  size_t total_written = 0;
-  struct connectdata *conn = data->conn;
 
   DEBUGASSERT(tn);
   DEBUGASSERT(nread > 0);
@@ -635,30 +666,7 @@ static CURLcode send_telnet_data(struct Curl_easy *data,
     outlen = (size_t)nread;
     outbuf = (const unsigned char *)buffer;
   }
-  while(!result && total_written < outlen) {
-    /* Make sure socket is writable to avoid EWOULDBLOCK condition */
-    struct pollfd pfd[1];
-    timediff_t timeout_ms = Curl_timeleft_ms(data);
-    pfd[0].fd = conn->sock[FIRSTSOCKET];
-    pfd[0].events = POLLOUT;
-    if(timeout_ms < 0)
-      return CURLE_OPERATION_TIMEDOUT;
-    /* 0 means no timeout configured; pass -1 to poll for infinite wait */
-    switch(Curl_poll(pfd, 1, timeout_ms ? timeout_ms : -1)) {
-    case -1:                    /* error, abort writing */
-      result = CURLE_SEND_ERROR;
-      break;
-    case 0:                     /* timeout */
-      result = CURLE_OPERATION_TIMEDOUT;
-      break;
-    default:                    /* write! */
-      bytes_written = 0;
-      result = Curl_xfer_send(data, outbuf + total_written,
-                              outlen - total_written, FALSE, &bytes_written);
-      total_written += bytes_written;
-      break;
-    }
-  }
+  result = send_telnet_buf(data, (const char *)outbuf, outlen);
 
   return result;
 }
@@ -671,7 +679,6 @@ static CURLcode send_telnet_data(struct Curl_easy *data,
 static void sendsuboption(struct Curl_easy *data,
                           struct TELNET *tn, int option)
 {
-  size_t nwritten;
   unsigned short x, y;
   const unsigned char *uc1, *uc2;
   CURLcode result;
@@ -703,14 +710,14 @@ static void sendsuboption(struct Curl_easy *data,
              CURL_SB_LEN(tn) - 2);
 
     /* we send the header of the suboption... */
-    result = Curl_xfer_send(data, tn->subbuffer, 3, FALSE, &nwritten);
+    result = send_telnet_buf(data, (const char *)tn->subbuffer, 3);
     if(result)
       failf(data, "Sending data failed: %s", curl_easy_strerror(result));
     /* ... then the window size with the send_telnet_data() function
        to deal with 0xFF cases ... */
     send_telnet_data(data, tn, (const char *)tn->subbuffer + 3, 4);
     /* ... and the footer */
-    result = Curl_xfer_send(data, tn->subbuffer + 7, 2, FALSE, &nwritten);
+    result = send_telnet_buf(data, (const char *)tn->subbuffer + 7, 2);
     if(result)
       failf(data, "Sending data failed: %s", curl_easy_strerror(result));
     break;
@@ -972,7 +979,6 @@ static CURLcode suboption(struct Curl_easy *data, struct TELNET *tn)
 {
   struct curl_slist *v;
   unsigned char temp[2048];
-  size_t nwritten;
   size_t len;
   CURLcode result = CURLE_OK;
 
@@ -993,7 +999,7 @@ static CURLcode suboption(struct Curl_easy *data, struct TELNET *tn)
                          CURL_IAC, CURL_SB, CURL_TELOPT_TTYPE,
                          CURL_TELQUAL_IS, tn->subopt_ttype, CURL_IAC,
                          CURL_SE);
-    result = Curl_xfer_send(data, temp, len, FALSE, &nwritten);
+    result = send_telnet_buf(data, (const char *)temp, len);
     if(result) {
       failf(data, "Sending data failed: %s", curl_easy_strerror(result));
       return result;
@@ -1011,7 +1017,7 @@ static CURLcode suboption(struct Curl_easy *data, struct TELNET *tn)
                          CURL_IAC, CURL_SB, CURL_TELOPT_XDISPLOC,
                          CURL_TELQUAL_IS, tn->subopt_xdisploc, CURL_IAC,
                          CURL_SE);
-    result = Curl_xfer_send(data, temp, len, FALSE, &nwritten);
+    result = send_telnet_buf(data, (const char *)temp, len);
     if(result) {
       failf(data, "Sending data failed: %s", curl_easy_strerror(result));
       return result;
@@ -1043,7 +1049,7 @@ static CURLcode suboption(struct Curl_easy *data, struct TELNET *tn)
     curl_msnprintf((char *)&temp[len], sizeof(temp) - len,
                    "%c%c", CURL_IAC, CURL_SE);
     len += 2;
-    result = Curl_xfer_send(data, temp, len, FALSE, &nwritten);
+    result = send_telnet_buf(data, (const char *)temp, len);
     if(result) {
       failf(data, "Sending data failed: %s", curl_easy_strerror(result));
       return result;
