@@ -223,6 +223,10 @@ static CURLcode init_telnet(struct Curl_easy *data)
 }
 
 
+static CURLcode send_telnet_data(struct Curl_easy *data,
+                                 struct TELNET *tn,
+                                 const char *buffer, ssize_t nread);
+
 static CURLcode send_telnet_buf(struct Curl_easy *data,
                                 const char *buffer, size_t outlen)
 {
