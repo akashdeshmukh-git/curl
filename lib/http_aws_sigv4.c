@@ -194,27 +194,38 @@ fail:
   return result;
 }
 
-static bool is_reserved_char(const char c)
-{
-  return (ISALNUM(c) || ISURLPUNTCS(c));
-}
-
 static CURLcode uri_encode_path(struct Curl_str *original_path,
                                 struct dynbuf *new_path)
 {
   const char *p = curlx_str(original_path);
-  size_t i;
+  const size_t len = curlx_strlen(original_path);
+  size_t i = 0;
 
-  for(i = 0; i < curlx_strlen(original_path); i++) {
+  while(i < len) {
     /* Do not encode slashes or unreserved chars from RFC 3986 */
-    CURLcode result = CURLE_OK;
-    unsigned char c = p[i];
-    if(is_reserved_char(c) || c == '/')
-      result = curlx_dyn_addn(new_path, &c, 1);
-    else
-      result = curlx_dyn_addf(new_path, "%%%02X", c);
-    if(result)
-      return result;
+    size_t batch_len = 0;
+    while(i + batch_len < len) {
+      unsigned char c = p[i + batch_len];
+      if(ISUNRESERVED(c) || c == '/')
+        batch_len++;
+      else
+        break;
+    }
+
+    if(batch_len > 0) {
+      CURLcode result = curlx_dyn_addn(new_path, p + i, batch_len);
+      if(result)
+        return result;
+      i += batch_len;
+    }
+
+    if(i < len) {
+      unsigned char c = p[i];
+      CURLcode result = curlx_dyn_addf(new_path, "%%%02X", c);
+      if(result)
+        return result;
+      i++;
+    }
   }
 
   return CURLE_OK;
@@ -247,7 +258,7 @@ static CURLcode normalize_query(const char *string, size_t len,
       len--;
     }
 
-    if(is_reserved_char(in))
+    if(ISUNRESERVED(in))
       /* Escape unreserved chars from RFC 3986 */
       result = curlx_dyn_addn(db, &in, 1);
     else if(in == '+')
