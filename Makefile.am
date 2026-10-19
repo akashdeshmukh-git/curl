@@ -65,6 +65,7 @@ CMAKE_DIST =                                     \
   tests/cmake/test.sh
 
 EXTRA_DIST = \
+  .jules/bolt.md \
   .clang-tidy.yml \
   .editorconfig \
   CHANGES.md \
