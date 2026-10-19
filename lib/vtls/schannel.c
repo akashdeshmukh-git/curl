@@ -289,7 +289,7 @@ static int get_alg_id_by_name(const char *name)
   int i;
 
   for(i = 0; algs[i].name; i++) {
-    /* ⚡ Bolt optimization:
+    /* Bolt optimization:
      * Avoid calculating strlen(algs[i].name) on every iteration.
      * Instead, check for exact match by verifying the null terminator
      * sits precisely at index 'n' after strncmp. */
