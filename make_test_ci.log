@@ -1,0 +1,1641 @@
+make[1]: Entering directory '/app/tests'
+Making all in certs
+make[2]: Entering directory '/app/tests/certs'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/certs'
+Making all in data
+make[2]: Entering directory '/app/tests/data'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/data'
+Making all in perf
+make[2]: Entering directory '/app/tests/perf'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/perf'
+Making all in server
+make[2]: Entering directory '/app/tests/server'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/server'
+Making all in libtest
+make[2]: Entering directory '/app/tests/libtest'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/libtest'
+Making all in http
+make[2]: Entering directory '/app/tests/http'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/tests/http'
+Making all in unit
+make[2]: Entering directory '/app/tests/unit'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/unit'
+Making all in tunit
+make[2]: Entering directory '/app/tests/tunit'
+  RUN      checksrc
+make[2]: Leaving directory '/app/tests/tunit'
+make[2]: Entering directory '/app/tests'
+(cd certs && make)
+make[3]: Entering directory '/app/tests/certs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/app/tests/certs'
+make[2]: Leaving directory '/app/tests'
+srcdir=. /usr/bin/perl -I. ./runtests.pl  -a -p ~flaky ~timing-dependent -r --retry=5 -j20 --buildinfo !776 !842 !843 !844 !845
+Using curl: ../src/curl
+********* System characteristics ********
+* curl 8.23.0-DEV (x86_64-pc-linux-gnu)
+* libcurl/8.23.0-DEV OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0
+* Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns mqtt mqtts pop3 pop3s rtsp smtp smtps telnet tftp ws wss
+* Features: alt-svc AsynchDNS brotli HSTS HTTPS-proxy IPv6 Largefile libz SSL threadsafe UnixSockets
+* Disabled: httpsig, win32-ca-searchpath, win32-ca-search-safe, override-dns, ssl-sessions
+* Host: devbox
+* System: Linux devbox 6.8.0 #1 SMP PREEMPT_DYNAMIC Fri Feb 20 20:38:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+* OS: linux
+* Perl: v5.38.2 (/usr/bin/perl)
+* Args: -a -p ~flaky ~timing-dependent -r --retry=5 -j20 --buildinfo !776 !842 !843 !844 !845
+* Jobs: 20
+* Env: Valgrind
+* Seed: 257331
+* buildinfo.configure.tool: configure
+* buildinfo.configure.args:  '--with-openssl' '--without-libpsl'
+* buildinfo.host: x86_64-pc-linux-gnu
+* buildinfo.host.cpu: x86_64
+* buildinfo.host.os: linux-gnu
+* buildinfo.target: x86_64-pc-linux-gnu
+* buildinfo.target.cpu: x86_64
+* buildinfo.target.os: linux-gnu
+* buildinfo.target.flags: UNIX GCC
+* buildinfo.compiler: GNU_C
+* buildinfo.compiler.version: 13
+* buildinfo.sysroot:
+* Servers: HTTP-IPv6 HTTP-unix FTP-IPv6
+*****************************************
+test 0064 SKIPPED: curl lacks crypto support
+test 0065 SKIPPED: curl lacks crypto support
+test 0067 SKIPPED: curl lacks NTLM support
+test 0068 SKIPPED: curl lacks NTLM support
+test 0069 SKIPPED: curl lacks NTLM support
+test 0072 SKIPPED: curl lacks crypto support
+test 0096 SKIPPED: curl lacks TrackMemory support
+test 0165 SKIPPED: curl lacks IDN support
+test 0320 SKIPPED: curl lacks PSL support
+test 0355 SKIPPED: curl lacks Debug support
+test 0356 SKIPPED: curl lacks Debug support
+test 0358 SKIPPED: curl lacks Debug support
+test 0375 SKIPPED: curl has proxy support
+test 0396 SKIPPED: curl lacks zstd support
+test 0397 SKIPPED: curl lacks zstd support
+test 0409 SKIPPED: curl lacks PSL support
+test 0445 SKIPPED: curl lacks ldap support
+test 0471 SKIPPED: curl lacks http/2 support
+test 0506 SKIPPED: curl has threaded-resolver support
+test 0558 SKIPPED: curl lacks TrackMemory support
+Warning: test573 result is ignored due to flaky
+Warning: test587 result is ignored due to flaky
+test 0632 SKIPPED: curl lacks sftp support
+test 0763 SKIPPED: curl lacks IDN support
+Warning: test766 result is ignored due to timing-dependent
+test 0777 SKIPPED: curl lacks ssl-sessions support
+test 0798 SKIPPED: curl lacks PSL support
+test 0962 SKIPPED: curl lacks IDN support
+Warning: test1086 result is ignored due to flaky
+Warning: test1086 result is ignored due to timing-dependent
+Warning: test1112 result is ignored due to timing-dependent
+Warning: test1113 result is ignored due to flaky
+Warning: test1162 result is ignored due to flaky
+Warning: test1163 result is ignored due to flaky
+Warning: test1208 result is ignored due to flaky
+Warning: test1208 result is ignored due to timing-dependent
+test 1330 SKIPPED: curl lacks TrackMemory support
+test 1451 SKIPPED: curl lacks win32 support
+test 1454 SKIPPED: curl has IPv6 support
+test 1459 SKIPPED: curl lacks sftp support
+Warning: test1510 result is ignored due to flaky
+test 1582 SKIPPED: curl lacks GSS-API support
+Warning: test1592 result is ignored due to flaky
+Warning: test1592 result is ignored due to timing-dependent
+Warning: test1631 result is ignored due to flaky
+Warning: test1632 result is ignored due to flaky
+test 1678 SKIPPED: curl lacks SSLS-EXPORT support
+test 1700 SKIPPED: curl lacks h2c support
+test 1702 SKIPPED: curl lacks h2c support
+test 1703 SKIPPED: curl lacks Unicode support
+test 1704 SKIPPED: curl lacks h2c support
+test 2033 SKIPPED: curl lacks Schannel support
+test 2056 SKIPPED: curl lacks GSS-API support
+test 2057 SKIPPED: curl lacks GSS-API support
+test 2070 SKIPPED: curl lacks Schannel support
+test 2079 SKIPPED: curl lacks Schannel support
+test 2102 SKIPPED: curl lacks override-dns support
+test 2103 SKIPPED: curl lacks override-dns support
+test 2104 SKIPPED: curl lacks override-dns support
+test 2402 SKIPPED: curl lacks http/2 support
+test 2403 SKIPPED: curl lacks http/2 support
+test 2500 SKIPPED: curl lacks http/3 support
+test 2502 SKIPPED: curl lacks http/3 support
+test 2503 SKIPPED: curl lacks http/3 support
+test 2604 SKIPPED: curl lacks sftp support
+test 4000 SKIPPED: curl lacks ECH support
+test 4001 SKIPPED: curl lacks ECH support
+Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+Hmmm, the tests are taking a while to finish. Here is the status:
+runtests.pl internal state:
+20 busy test runner(s) of 20
+Runner 1 (id 524474) running test 20 in state 4
+Runner 2 (id 524475) running test 19 in state 4
+Runner 3 (id 524476) running test 18 in state 4
+Runner 4 (id 524477) running test 17 in state 4
+Runner 5 (id 524478) running test 16 in state 4
+Runner 6 (id 524479) running test 15 in state 4
+Runner 7 (id 524480) running test 14 in state 4
+Runner 8 (id 524481) running test 13 in state 4
+Runner 9 (id 524482) running test 12 in state 4
+Runner 10 (id 524483) running test 11 in state 4
+Runner 11 (id 524484) running test 10 in state 4
+Runner 12 (id 524485) running test 9 in state 4
+Runner 13 (id 524488) running test 8 in state 4
+Runner 14 (id 524489) running test 7 in state 4
+Runner 15 (id 524490) running test 6 in state 4
+Runner 16 (id 524491) running test 5 in state 4
+Runner 17 (id 524492) running test 4 in state 4
+Runner 18 (id 524495) running test 3 in state 4
+Runner 19 (id 524496) running test 2 in state 4
+Runner 20 (id 524499) running test 1 in state 4
+Hmmm, the tests are taking a while to finish. Here is the status:
+runtests.pl internal state:
+20 busy test runner(s) of 20
+Runner 1 (id 524474) running test 20 in state 4
+Runner 2 (id 524475) running test 19 in state 4
+Runner 3 (id 524476) running test 18 in state 4
+Runner 4 (id 524477) running test 17 in state 4
+Runner 5 (id 524478) running test 16 in state 4
+Runner 6 (id 524479) running test 15 in state 4
+Runner 7 (id 524480) running test 14 in state 4
+Runner 8 (id 524481) running test 13 in state 4
+Runner 9 (id 524482) running test 12 in state 4
+Runner 10 (id 524483) running test 11 in state 4
+Runner 11 (id 524484) running test 10 in state 4
+Runner 12 (id 524485) running test 9 in state 4
+Runner 13 (id 524488) running test 8 in state 4
+Runner 14 (id 524489) running test 7 in state 4
+Runner 15 (id 524490) running test 6 in state 4
+Runner 16 (id 524491) running test 5 in state 4
+Runner 17 (id 524492) running test 4 in state 4
+Runner 18 (id 524495) running test 3 in state 4
+Runner 19 (id 524496) running test 2 in state 4
+Runner 20 (id 524499) running test 1 in state 4
+test 0009 [HTTP RFC1867-type formposting]
+
+curl returned 26, when expecting 0
+ 9: exit FAILED
+== Contents of files in the log/12/ directory after test 9
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/12/valgrind456 ../src/curl -q --output log/12/curl456.out  --include --trace-ascii log/12/trace456 --trace-time http://127.0.0.1:42975/456 --variable what@log/12/junk --expand-data "{{what}}" > log/12/stdout456 2> log/12/stderr456
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:14:24.548370 ====> Client connect
+ 23:14:24.548417 accept_connection 3 returned 4
+ 23:14:24.548441 Read 97 bytes
+ 23:14:24.548451 Process 97 bytes request
+ 23:14:24.548464 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:24.548472 Are-we-friendly question received
+ 23:14:24.548496 Wrote request (97 bytes) input to log/12/server.input
+ 23:14:24.548515 Identifying ourselves as friends
+ 23:14:24.548595 Response sent (57 bytes) and written to log/12/server.response
+ 23:14:24.548606 special request received, no persistency
+ 23:14:24.548614 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:42975...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 42975) from 127.0.0.1 port 43160
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:42975
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:42975 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436939
+=== End of file http_verify.out
+=== Start of file junk
+  hello
+=== End of file junk
+=== Start of file server.cmd
+ Testnum 456
+=== End of file server.cmd
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436939
+=== End of file server.response
+=== Start of file test456
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ HTTP
+ variables
+ </keywords>
+ </info>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Variable output starting with NUL byte
+ </name>
+ <file name="log/12/junk">
+  hello
+ </file>
+ <command>
+ http://127.0.0.1:42975/456 --variable what@log/12/junk --expand-data "{{what}}"
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <errorcode>
+ 2
+ </errorcode>
+ </verify>
+ </testcase>
+=== End of file test456
+test 0019 [attempt connect to non-listening socket]
+
+curl returned 7, when expecting 0
+ 19: exit FAILED
+== Contents of files in the log/2/ directory after test 19
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/2/valgrind452 ../src/curl -q --output log/2/curl452.out  --include --trace-ascii log/2/trace452 --trace-time http://127.0.0.1:46109/452 --variable what=hello --expand-data "--{{what:trim:super}}" > log/2/stdout452 2> log/2/stderr452
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:41:13.506653 ====> Client connect
+ 23:41:13.506702 accept_connection 3 returned 4
+ 23:41:13.506724 Read 97 bytes
+ 23:41:13.506734 Process 97 bytes request
+ 23:41:13.506748 Got request: GET /verifiedserver HTTP/1.1
+ 23:41:13.506757 Are-we-friendly question received
+ 23:41:13.506781 Wrote request (97 bytes) input to log/2/server.input
+ 23:41:13.506799 Identifying ourselves as friends
+ 23:41:13.506865 Response sent (57 bytes) and written to log/2/server.response
+ 23:41:13.506876 special request received, no persistency
+ 23:41:13.506884 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:46109...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 46109) from 127.0.0.1 port 59954
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:46109
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:46109 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 441222
+=== End of file http_verify.out
+=== Start of file server.cmd
+ Testnum 452
+=== End of file server.cmd
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 441222
+=== End of file server.response
+=== Start of file test452
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ variables
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Variable using illegal function in expansion
+ </name>
+ <command>
+ http://127.0.0.1:46109/452 --variable what=hello --expand-data "--{{what:trim:super}}"
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <errorcode>
+ 2
+ </errorcode>
+ </verify>
+ </testcase>
+=== End of file test452
+=== Start of file trace19
+ 00:05:41.614983 [0-x] * [MULTI] [INIT] added to multi, mid=1, running=1, total=2
+ 00:05:42.061078 [0-x] * [MULTI] [INIT] pollset[], timeouts=0, paused 0/0 (r/w)
+ 00:05:42.161860 [0-x] * [MULTI] [INIT] multi_wait(fds=1, timeout=0) tinternal=0
+ 00:05:42.389776 [0-x] * [MULTI] [INIT] -> [SETUP]
+ 00:05:42.391085 [0-x] * [MULTI] [SETUP] [PGRS-STARTOP] set
+ 00:05:42.392365 [0-x] * [MULTI] [SETUP] [PGRS-STARTSINGLE] set
+ 00:05:42.392663 [0-x] * [MULTI] [SETUP] -> [CONNECT]
+ 00:05:42.460329 [0-x] * [READ] client_reset, clear readers
+ 00:05:42.707759 [0-x] * [MULTI] [CONNECT] transfer credentials: -
+ 00:05:42.709129 [0-x] * [MULTI] [CONNECT] [PGRS-POSTQUEUE] set
+ 00:05:43.011698 [0-x] * [MULTI] [CONNECT] [CPOOL] added connection 0. The cache now contains 1 members
+ 00:05:43.175088 [0-0] * [SETUP] added
+ 00:05:43.216245 [0-0] * [DNS] [A+AAAA] created DNS filter for 127.0.0.1:47, Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+transport=3
+ 00:05:43.249370 [0-0] * [DNS] added
+ 00:05:43.278208 [0-0] * [MULTI] [CONNECT] Curl_conn_setup() -> 0
+ 00:05:43.313608 [0-0] * [MULTI] [CONNECT] -> [CONNECTING]
+ 00:05:43.354442 [0-0] * [DNS] [A+AAAA] cf_dns_start host 127.0.0.1:47
+ 00:05:43.436492 [0-0] * [DNS] cache lookup 127.0.0.1:47 queries=A+AAAA -> 0 not found
+ 00:05:43.509663 [0-0] * [DNS] [A+AAAA] hostip_resolv started -> 0
+ 00:05:43.549540 [0-0] * [DNS] cached entry for 127.0.0.1:47 queries=A+AAAA
+ 00:05:43.552878 [0-0] * [MULTI] [CONNECTING] [PGRS-NAMELOOKUP] added 1160018us
+ 00:05:43.638203 [0-0] * [MULTI] [CONNECTING] cf_setup_connect [0][!DNS][!SETUP]
+ 00:05:43.678534 [0-0] * [SETUP] happy eyeballing to origin 127.0.0.1:47
+ 00:05:43.679354 [0-0] * [MULTI] [CONNECTING] cf_setup_connect [0][!DNS][!SETUP][!HAPPY-EYEBALLS]
+ 00:05:43.718490 [0-0] * [HAPPY-EYEBALLS] init ip ballers for transport 3
+ 00:05:43.719556 [0-0] * [HAPPY-EYEBALLS] want to do more
+ 00:05:43.720999 [0-0] * [DNS] get 0th result for 127.0.0.1:47, family=10, dns=1
+ 00:05:43.746405 [0-0] * [HAPPY-EYEBALLS] check for next AAAA address: none
+ 00:05:43.746911 [0-0] * [DNS] get 0th result for 127.0.0.1:47, family=2, dns=1
+ 00:05:43.747695 [0-0] * [HAPPY-EYEBALLS] check for next A address: found
+ 00:05:43.793197 [0-0] * [HAPPY-EYEBALLS] starting first attempt for ipv4 -> 0
+ 00:05:43.867074 [0-0] *   Trying 127.0.0.1:47...
+ 00:05:43.937483 [0-0] * [TCP] cf_socket_open() -> 0, fd=7
+ 00:05:43.958476 [0-0] * [TCP] local address 127.0.0.1 port 47468...
+ 00:05:43.960474 [0-0] * [HAPPY-EYEBALLS] checked connect attempts: 1 ongoing, 0 inconclusive
+ 00:05:43.961033 [0-0] * [DNS] get 1th result for 127.0.0.1:47, family=2, dns=1
+ 00:05:44.001699 [0-0] * [DNS] get 0th result for 127.0.0.1:47, family=10, dns=1
+ 00:05:44.002825 [0-0] * [DNS] get 1th result for 127.0.0.1:47, family=2, dns=1
+ 00:05:44.003300 [0-0] * [DNS] get 0th result for 127.0.0.1:47, family=10, dns=1
+ 00:05:44.004746 [0-0] * [DNS] Curl_conn_connect(block=0) -> 0, done=0
+ 00:05:44.122570 [0-0] * [TCP] adjust_pollset, !connected, POLLOUT fd=7
+ 00:05:44.123491 [0-0] * [HAPPY-EYEBALLS] adjust_pollset -> 0, 1 socks
+ 00:05:44.124537 [0-0] * [MULTI] [CONNECTING] pollset[fd=7 OUT], timeouts=0
+ 00:05:44.159458 [0-0] * [MULTI] [CONNECTING] multi_wait(fds=3, timeout=1000) tinternal=-1
+ 00:05:44.160878 [0-0] * [MULTI] [CONNECTING] cf_setup_connect [0][!DNS][!SETUP][!HAPPY-EYEBALLS]
+ 00:05:44.199286 [0-0] * [TCP] poll/select error on fd=7
+ 00:05:44.283496 [0-0] * [MULTI] [CONNECTING] Curl_multi_will_close fd=7
+ 00:05:44.325509 [0-0] * connect to 127.0.0.1 port 47 from 127.0.0.1 port 47468 failed: Connection refused
+ 00:05:44.326778 [0-0] * [TCP] destroy
+ 00:05:44.328630 [0-0] * [HAPPY-EYEBALLS] want to do more
+ 00:05:44.328707 [0-0] * [DNS] get 0th result for 127.0.0.1:47, family=10, dns=1
+ 00:05:44.328761 [0-0] * [HAPPY-EYEBALLS] check for next AAAA address: none
+ 00:05:44.328821 [0-0] * [DNS] get 1th result for 127.0.0.1:47, family=2, dns=1
+ 00:05:44.329117 [0-0] * [HAPPY-EYEBALLS] check for next A address: none
+ 00:05:44.366426 [0-0] * [HAPPY-EYEBALLS] no more attempts to try
+ 00:05:44.405842 [0-0] * Failed to connect to 127.0.0.1:47 after 1976 ms: Could not connect to server
+ 00:05:44.406472 [0-0] * [DNS] Curl_conn_connect(block=0) -> 7, done=0
+ 00:05:44.445751 [0-0] * [DNS] Curl_conn_connect(), filter returned 7
+ 00:05:44.446102 [0-0] * [MULTI] [CONNECTING] failed to connect [0][!DNS][!SETUP][!HAPPY-EYEBALLS]
+ 00:05:44.478084 [0-0] * [MULTI] [CONNECTING] connect failed -> 7
+ 00:05:44.478932 [0-0] * [MULTI] [CONNECTING] multi_done: status: 7 prem: 1 done: 0
+ 00:05:44.513371 [0-0] * [WRITE] [OUT] done
+ 00:05:44.514777 [0-0] * [WRITE] client_flush() -> 0
+ 00:05:44.594063 [0-0] * [MULTI] [CONNECTING] multi_done_locked, in use=0
+ 00:05:44.596199 [0-0] * [MULTI] [CONNECTING] multi_done, terminating conn #0 to 127.0.0.1:47, forbid=0, close=0, premature=1, conn_multiplex=0
+ 00:05:44.671510 [0-0] * closing connection #0
+ 00:05:44.784454 [0-0] * [MULTI] [CONNECTING] -> [COMPLETED]
+ 00:05:44.784918 [0-0] * [MULTI] [COMPLETED] [PGRS-PRETRANSFER] added 2392778us
+ 00:05:44.785222 [0-0] * [MULTI] [COMPLETED] [PGRS-POSTRANSFER] added 2393149us
+ 00:05:44.821766 [0-0] * [MULTI] [COMPLETED] [PGRS-STARTTRANSFER] added 2429492us
+ 00:05:44.823925 [0-0] * [MULTI] [COMPLETED] -> [MSGSENT]
+ 00:05:44.943769 [0-0] * [MULTI] [COMPLETED] removed from multi, mid=1, running=0, total=1
+=== End of file trace19
+test 0010 [simple HTTP PUT from file]
+
+curl returned 26, when expecting 0
+ 10: exit FAILED
+== Contents of files in the log/11/ directory after test 10
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/11/valgrind442 ../src/curl -q --output log/11/curl442.out  --include --trace-ascii log/11/trace442 --trace-time http://attack.invalid:35207/a/b/442 -b log/11/cookie442 --resolve attack.invalid:35207:127.0.0.1 -L > log/11/stdout442 2> log/11/stderr442
+=== End of file commands.log
+=== Start of file cookie442
+ attack.invalid	TRUE	/	FALSE	0	name1	could-be-large-1
+ attack.invalid	TRUE	/	FALSE	0	name2	could-be-large-2
+ attack.invalid	TRUE	/	FALSE	0	name3	could-be-large-3
+ attack.invalid	TRUE	/	FALSE	0	name4	could-be-large-4
+ attack.invalid	TRUE	/	FALSE	0	name5	could-be-large-5
+ attack.invalid	TRUE	/	FALSE	0	name6	could-be-large-6
+ attack.invalid	TRUE	/	FALSE	0	name7	could-be-large-7
+ attack.invalid	TRUE	/	FALSE	0	name8	could-be-large-8
+ attack.invalid	TRUE	/	FALSE	0	name9	could-be-large-9
+ attack.invalid	TRUE	/	FALSE	0	name10	could-be-large-10
+ attack.invalid	TRUE	/	FALSE	0	name11	could-be-large-11
+ attack.invalid	TRUE	/	FALSE	0	name12	could-be-large-12
+ attack.invalid	TRUE	/	FALSE	0	name13	could-be-large-13
+ attack.invalid	TRUE	/	FALSE	0	name14	could-be-large-14
+ attack.invalid	TRUE	/	FALSE	0	name15	could-be-large-15
+ attack.invalid	TRUE	/	FALSE	0	name16	could-be-large-16
+ attack.invalid	TRUE	/	FALSE	0	name17	could-be-large-17
+ attack.invalid	TRUE	/	FALSE	0	name18	could-be-large-18
+ attack.invalid	TRUE	/	FALSE	0	name19	could-be-large-19
+ attack.invalid	TRUE	/	FALSE	0	name20	could-be-large-20
+ attack.invalid	TRUE	/	FALSE	0	name21	could-be-large-21
+ attack.invalid	TRUE	/	FALSE	0	name22	could-be-large-22
+ attack.invalid	TRUE	/	FALSE	0	name23	could-be-large-23
+ attack.invalid	TRUE	/	FALSE	0	name24	could-be-large-24
+ attack.invalid	TRUE	/	FALSE	0	name25	could-be-large-25
+ attack.invalid	TRUE	/	FALSE	0	name26	could-be-large-26
+ attack.invalid	TRUE	/	FALSE	0	name27	could-be-large-27
+ attack.invalid	TRUE	/	FALSE	0	name28	could-be-large-28
+ attack.invalid	TRUE	/	FALSE	0	name29	could-be-large-29
+ attack.invalid	TRUE	/	FALSE	0	name30	could-be-large-30
+ attack.invalid	TRUE	/	FALSE	0	name31	could-be-large-31
+ attack.invalid	TRUE	/	FALSE	0	name32	could-be-large-32
+ attack.invalid	TRUE	/	FALSE	0	name33	could-be-large-33
+ attack.invalid	TRUE	/	FALSE	0	name34	could-be-large-34
+ attack.invalid	TRUE	/	FALSE	0	name35	could-be-large-35
+ attack.invalid	TRUE	/	FALSE	0	name36	could-be-large-36
+ attack.invalid	TRUE	/	FALSE	0	name37	could-be-large-37
+ attack.invalid	TRUE	/	FALSE	0	name38	could-be-large-38
+ attack.invalid	TRUE	/	FALSE	0	name39	could-be-large-39
+ attack.invalid	TRUE	/	FALSE	0	name40	could-be-large-40
+ attack.invalid	TRUE	/	FALSE	0	name41	could-be-large-41
+ attack.invalid	TRUE	/	FALSE	0	name42	could-be-large-42
+ attack.invalid	TRUE	/	FALSE	0	name43	could-be-large-43
+ attack.invalid	TRUE	/	FALSE	0	name44	could-be-large-44
+ attack.invalid	TRUE	/	FALSE	0	name45	could-be-large-45
+ attack.invalid	TRUE	/	FALSE	0	name46	could-be-large-46
+ attack.invalid	TRUE	/	FALSE	0	name47	could-be-large-47
+ attack.invalid	TRUE	/	FALSE	0	name48	could-be-large-48
+ attack.invalid	TRUE	/	FALSE	0	name49	could-be-large-49
+ attack.invalid	TRUE	/	FALSE	0	name50	could-be-large-50
+ attack.invalid	TRUE	/	FALSE	0	name51	could-be-large-51
+ attack.invalid	TRUE	/	FALSE	0	name52	could-be-large-52
+ attack.invalid	TRUE	/	FALSE	0	name53	could-be-large-53
+ attack.invalid	TRUE	/	FALSE	0	name54	could-be-large-54
+ attack.invalid	TRUE	/	FALSE	0	name55	could-be-large-55
+ attack.invalid	TRUE	/	FALSE	0	name56	could-be-large-56
+ attack.invalid	TRUE	/	FALSE	0	name57	could-be-large-57
+ attack.invalid	TRUE	/	FALSE	0	name58	could-be-large-58
+ attack.invalid	TRUE	/	FALSE	0	name59	could-be-large-59
+ attack.invalid	TRUE	/	FALSE	0	name60	could-be-large-60
+ attack.invalid	TRUE	/	FALSE	0	name61	could-be-large-61
+ attack.invalid	TRUE	/	FALSE	0	name62	could-be-large-62
+ attack.invalid	TRUE	/	FALSE	0	name63	could-be-large-63
+ attack.invalid	TRUE	/	FALSE	0	name64	could-be-large-64
+ attack.invalid	TRUE	/	FALSE	0	name65	could-be-large-65
+ attack.invalid	TRUE	/	FALSE	0	name66	could-be-large-66
+ attack.invalid	TRUE	/	FALSE	0	name67	could-be-large-67
+ attack.invalid	TRUE	/	FALSE	0	name68	could-be-large-68
+ attack.invalid	TRUE	/	FALSE	0	name69	could-be-large-69
+ attack.invalid	TRUE	/	FALSE	0	name70	could-be-large-70
+ attack.invalid	TRUE	/	FALSE	0	name71	could-be-large-71
+ attack.invalid	TRUE	/	FALSE	0	name72	could-be-large-72
+ attack.invalid	TRUE	/	FALSE	0	name73	could-be-large-73
+ attack.invalid	TRUE	/	FALSE	0	name74	could-be-large-74
+ attack.invalid	TRUE	/	FALSE	0	name75	could-be-large-75
+ attack.invalid	TRUE	/	FALSE	0	name76	could-be-large-76
+ attack.invalid	TRUE	/	FALSE	0	name77	could-be-large-77
+ attack.invalid	TRUE	/	FALSE	0	name78	could-be-large-78
+ attack.invalid	TRUE	/	FALSE	0	name79	could-be-large-79
+ attack.invalid	TRUE	/	FALSE	0	name80	could-be-large-80
+ attack.invalid	TRUE	/	FALSE	0	name81	could-be-large-81
+ attack.invalid	TRUE	/	FALSE	0	name82	could-be-large-82
+ attack.invalid	TRUE	/	FALSE	0	name83	could-be-large-83
+ attack.invalid	TRUE	/	FALSE	0	name84	could-be-large-84
+ attack.invalid	TRUE	/	FALSE	0	name85	could-be-large-85
+ attack.invalid	TRUE	/	FALSE	0	name86	could-be-large-86
+ attack.invalid	TRUE	/	FALSE	0	name87	could-be-large-87
+ attack.invalid	TRUE	/	FALSE	0	name88	could-be-large-88
+ attack.invalid	TRUE	/	FALSE	0	name89	could-be-large-89
+ attack.invalid	TRUE	/	FALSE	0	name90	could-be-large-90
+ attack.invalid	TRUE	/	FALSE	0	name91	could-be-large-91
+ attack.invalid	TRUE	/	FALSE	0	name92	could-be-large-92
+ attack.invalid	TRUE	/	FALSE	0	name93	could-be-large-93
+ attack.invalid	TRUE	/	FALSE	0	name94	could-be-large-94
+ attack.invalid	TRUE	/	FALSE	0	name95	could-be-large-95
+ attack.invalid	TRUE	/	FALSE	0	name96	could-be-large-96
+ attack.invalid	TRUE	/	FALSE	0	name97	could-be-large-97
+ attack.invalid	TRUE	/	FALSE	0	name98	could-be-large-98
+ attack.invalid	TRUE	/	FALSE	0	name99	could-be-large-99
+ attack.invalid	TRUE	/	FALSE	0	name100	could-be-large-100
+ attack.invalid	TRUE	/	FALSE	0	name101	could-be-large-101
+ attack.invalid	TRUE	/	FALSE	0	name102	could-be-large-102
+ attack.invalid	TRUE	/	FALSE	0	name103	could-be-large-103
+ attack.invalid	TRUE	/	FALSE	0	name104	could-be-large-104
+ attack.invalid	TRUE	/	FALSE	0	name105	could-be-large-105
+ attack.invalid	TRUE	/	FALSE	0	name106	could-be-large-106
+ attack.invalid	TRUE	/	FALSE	0	name107	could-be-large-107
+ attack.invalid	TRUE	/	FALSE	0	name108	could-be-large-108
+ attack.invalid	TRUE	/	FALSE	0	name109	could-be-large-109
+ attack.invalid	TRUE	/	FALSE	0	name110	could-be-large-110
+ attack.invalid	TRUE	/	FALSE	0	name111	could-be-large-111
+ attack.invalid	TRUE	/	FALSE	0	name112	could-be-large-112
+ attack.invalid	TRUE	/	FALSE	0	name113	could-be-large-113
+ attack.invalid	TRUE	/	FALSE	0	name114	could-be-large-114
+ attack.invalid	TRUE	/	FALSE	0	name115	could-be-large-115
+ attack.invalid	TRUE	/	FALSE	0	name116	could-be-large-116
+ attack.invalid	TRUE	/	FALSE	0	name117	could-be-large-117
+ attack.invalid	TRUE	/	FALSE	0	name118	could-be-large-118
+ attack.invalid	TRUE	/	FALSE	0	name119	could-be-large-119
+ attack.invalid	TRUE	/	FALSE	0	name120	could-be-large-120
+ attack.invalid	TRUE	/	FALSE	0	name121	could-be-large-121
+ attack.invalid	TRUE	/	FALSE	0	name122	could-be-large-122
+ attack.invalid	TRUE	/	FALSE	0	name123	could-be-large-123
+ attack.invalid	TRUE	/	FALSE	0	name124	could-be-large-124
+ attack.invalid	TRUE	/	FALSE	0	name125	could-be-large-125
+ attack.invalid	TRUE	/	FALSE	0	name126	could-be-large-126
+ attack.invalid	TRUE	/	FALSE	0	name127	could-be-large-127
+ attack.invalid	TRUE	/	FALSE	0	name128	could-be-large-128
+ attack.invalid	TRUE	/	FALSE	0	name129	could-be-large-129
+ attack.invalid	TRUE	/	FALSE	0	name130	could-be-large-130
+ attack.invalid	TRUE	/	FALSE	0	name131	could-be-large-131
+ attack.invalid	TRUE	/	FALSE	0	name132	could-be-large-132
+ attack.invalid	TRUE	/	FALSE	0	name133	could-be-large-133
+ attack.invalid	TRUE	/	FALSE	0	name134	could-be-large-134
+ attack.invalid	TRUE	/	FALSE	0	name135	could-be-large-135
+ attack.invalid	TRUE	/	FALSE	0	name136	could-be-large-136
+ attack.invalid	TRUE	/	FALSE	0	name137	could-be-large-137
+ attack.invalid	TRUE	/	FALSE	0	name138	could-be-large-138
+ attack.invalid	TRUE	/	FALSE	0	name139	could-be-large-139
+ attack.invalid	TRUE	/	FALSE	0	name140	could-be-large-140
+ attack.invalid	TRUE	/	FALSE	0	name141	could-be-large-141
+ attack.invalid	TRUE	/	FALSE	0	name142	could-be-large-142
+ attack.invalid	TRUE	/	FALSE	0	name143	could-be-large-143
+ attack.invalid	TRUE	/	FALSE	0	name144	could-be-large-144
+ attack.invalid	TRUE	/	FALSE	0	name145	could-be-large-145
+ attack.invalid	TRUE	/	FALSE	0	name146	could-be-large-146
+ attack.invalid	TRUE	/	FALSE	0	name147	could-be-large-147
+ attack.invalid	TRUE	/	FALSE	0	name148	could-be-large-148
+ attack.invalid	TRUE	/	FALSE	0	name149	could-be-large-149
+ attack.invalid	TRUE	/	FALSE	0	name150	could-be-large-150
+ attack.invalid	TRUE	/	FALSE	0	name151	could-be-large-151
+=== End of file cookie442
+=== Start of file http_server.log
+ 23:14:16.398271 ====> Client connect
+ 23:14:16.398335 accept_connection 3 returned 4
+ 23:14:16.398361 Read 97 bytes
+ 23:14:16.398389 Process 97 bytes request
+ 23:14:16.398407 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:16.398417 Are-we-friendly question received
+ 23:14:16.398442 Wrote request (97 bytes) input to log/11/server.input
+ 23:14:16.398603 Identifying ourselves as friends
+ 23:14:16.398788 Response sent (57 bytes) and written to log/11/server.response
+ 23:14:16.398802 special request received, no persistency
+ 23:14:16.398810 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:35207...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 35207) from 127.0.0.1 port 46346
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:35207
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:35207 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436947
+=== End of file http_verify.out
+=== Start of file server.cmd
+ Testnum 442
+=== End of file server.cmd
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436947
+=== End of file server.response
+=== Start of file test442
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ # perl:
+ # for(1 .. 151) {
+ #    print join("\t",
+ #               "attack.invalid", "TRUE", "/", "FALSE", "0",
+ #               "name$_", "could-be-large-$_")."\n";
+ # }
+ <info>
+ <keywords>
+ HTTP
+ cookies
+ --resolve
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ <data>
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Content-Length: 6
+ -foo-
+ </data>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Send capped huge number of matching cookies
+ </name>
+ <command>
+ http://attack.invalid:35207/a/b/442 -b log/11/cookie442 --resolve attack.invalid:35207:127.0.0.1 -L
+ </command>
+ <file name="log/11/cookie442" mode="text">
+ attack.invalid	TRUE	/	FALSE	0	name1	could-be-large-1
+ attack.invalid	TRUE	/	FALSE	0	name2	could-be-large-2
+ attack.invalid	TRUE	/	FALSE	0	name3	could-be-large-3
+ attack.invalid	TRUE	/	FALSE	0	name4	could-be-large-4
+ attack.invalid	TRUE	/	FALSE	0	name5	could-be-large-5
+ attack.invalid	TRUE	/	FALSE	0	name6	could-be-large-6
+ attack.invalid	TRUE	/	FALSE	0	name7	could-be-large-7
+ attack.invalid	TRUE	/	FALSE	0	name8	could-be-large-8
+ attack.invalid	TRUE	/	FALSE	0	name9	could-be-large-9
+ attack.invalid	TRUE	/	FALSE	0	name10	could-be-large-10
+ attack.invalid	TRUE	/	FALSE	0	name11	could-be-large-11
+ attack.invalid	TRUE	/	FALSE	0	name12	could-be-large-12
+ attack.invalid	TRUE	/	FALSE	0	name13	could-be-large-13
+ attack.invalid	TRUE	/	FALSE	0	name14	could-be-large-14
+ attack.invalid	TRUE	/	FALSE	0	name15	could-be-large-15
+ attack.invalid	TRUE	/	FALSE	0	name16	could-be-large-16
+ attack.invalid	TRUE	/	FALSE	0	name17	could-be-large-17
+ attack.invalid	TRUE	/	FALSE	0	name18	could-be-large-18
+ attack.invalid	TRUE	/	FALSE	0	name19	could-be-large-19
+ attack.invalid	TRUE	/	FALSE	0	name20	could-be-large-20
+ attack.invalid	TRUE	/	FALSE	0	name21	could-be-large-21
+ attack.invalid	TRUE	/	FALSE	0	name22	could-be-large-22
+ attack.invalid	TRUE	/	FALSE	0	name23	could-be-large-23
+ attack.invalid	TRUE	/	FALSE	0	name24	could-be-large-24
+ attack.invalid	TRUE	/	FALSE	0	name25	could-be-large-25
+ attack.invalid	TRUE	/	FALSE	0	name26	could-be-large-26
+ attack.invalid	TRUE	/	FALSE	0	name27	could-be-large-27
+ attack.invalid	TRUE	/	FALSE	0	name28	could-be-large-28
+ attack.invalid	TRUE	/	FALSE	0	name29	could-be-large-29
+ attack.invalid	TRUE	/	FALSE	0	name30	could-be-large-30
+ attack.invalid	TRUE	/	FALSE	0	name31	could-be-large-31
+ attack.invalid	TRUE	/	FALSE	0	name32	could-be-large-32
+ attack.invalid	TRUE	/	FALSE	0	name33	could-be-large-33
+ attack.invalid	TRUE	/	FALSE	0	name34	could-be-large-34
+ attack.invalid	TRUE	/	FALSE	0	name35	could-be-large-35
+ attack.invalid	TRUE	/	FALSE	0	name36	could-be-large-36
+ attack.invalid	TRUE	/	FALSE	0	name37	could-be-large-37
+ attack.invalid	TRUE	/	FALSE	0	name38	could-be-large-38
+ attack.invalid	TRUE	/	FALSE	0	name39	could-be-large-39
+ attack.invalid	TRUE	/	FALSE	0	name40	could-be-large-40
+ attack.invalid	TRUE	/	FALSE	0	name41	could-be-large-41
+ attack.invalid	TRUE	/	FALSE	0	name42	could-be-large-42
+ attack.invalid	TRUE	/	FALSE	0	name43	could-be-large-43
+ attack.invalid	TRUE	/	FALSE	0	name44	could-be-large-44
+ attack.invalid	TRUE	/	FALSE	0	name45	could-be-large-45
+ attack.invalid	TRUE	/	FALSE	0	name46	could-be-large-46
+ attack.invalid	TRUE	/	FALSE	0	name47	could-be-large-47
+ attack.invalid	TRUE	/	FALSE	0	name48	could-be-large-48
+ attack.invalid	TRUE	/	FALSE	0	name49	could-be-large-49
+ attack.invalid	TRUE	/	FALSE	0	name50	could-be-large-50
+ attack.invalid	TRUE	/	FALSE	0	name51	could-be-large-51
+ attack.invalid	TRUE	/	FALSE	0	name52	could-be-large-52
+ attack.invalid	TRUE	/	FALSE	0	name53	could-be-large-53
+ attack.invalid	TRUE	/	FALSE	0	name54	could-be-large-54
+ attack.invalid	TRUE	/	FALSE	0	name55	could-be-large-55
+ attack.invalid	TRUE	/	FALSE	0	name56	could-be-large-56
+ attack.invalid	TRUE	/	FALSE	0	name57	could-be-large-57
+ attack.invalid	TRUE	/	FALSE	0	name58	could-be-large-58
+ attack.invalid	TRUE	/	FALSE	0	name59	could-be-large-59
+ attack.invalid	TRUE	/	FALSE	0	name60	could-be-large-60
+ attack.invalid	TRUE	/	FALSE	0	name61	could-be-large-61
+ attack.invalid	TRUE	/	FALSE	0	name62	could-be-large-62
+ attack.invalid	TRUE	/	FALSE	0	name63	could-be-large-63
+ attack.invalid	TRUE	/	FALSE	0	name64	could-be-large-64
+ attack.invalid	TRUE	/	FALSE	0	name65	could-be-large-65
+ attack.invalid	TRUE	/	FALSE	0	name66	could-be-large-66
+ attack.invalid	TRUE	/	FALSE	0	name67	could-be-large-67
+ attack.invalid	TRUE	/	FALSE	0	name68	could-be-large-68
+ attack.invalid	TRUE	/	FALSE	0	name69	could-be-large-69
+ attack.invalid	TRUE	/	FALSE	0	name70	could-be-large-70
+ attack.invalid	TRUE	/	FALSE	0	name71	could-be-large-71
+ attack.invalid	TRUE	/	FALSE	0	name72	could-be-large-72
+ attack.invalid	TRUE	/	FALSE	0	name73	could-be-large-73
+ attack.invalid	TRUE	/	FALSE	0	name74	could-be-large-74
+ attack.invalid	TRUE	/	FALSE	0	name75	could-be-large-75
+ attack.invalid	TRUE	/	FALSE	0	name76	could-be-large-76
+ attack.invalid	TRUE	/	FALSE	0	name77	could-be-large-77
+ attack.invalid	TRUE	/	FALSE	0	name78	could-be-large-78
+ attack.invalid	TRUE	/	FALSE	0	name79	could-be-large-79
+ attack.invalid	TRUE	/	FALSE	0	name80	could-be-large-80
+ attack.invalid	TRUE	/	FALSE	0	name81	could-be-large-81
+ attack.invalid	TRUE	/	FALSE	0	name82	could-be-large-82
+ attack.invalid	TRUE	/	FALSE	0	name83	could-be-large-83
+ attack.invalid	TRUE	/	FALSE	0	name84	could-be-large-84
+ attack.invalid	TRUE	/	FALSE	0	name85	could-be-large-85
+ attack.invalid	TRUE	/	FALSE	0	name86	could-be-large-86
+ attack.invalid	TRUE	/	FALSE	0	name87	could-be-large-87
+ attack.invalid	TRUE	/	FALSE	0	name88	could-be-large-88
+ attack.invalid	TRUE	/	FALSE	0	name89	could-be-large-89
+ attack.invalid	TRUE	/	FALSE	0	name90	could-be-large-90
+ attack.invalid	TRUE	/	FALSE	0	name91	could-be-large-91
+ attack.invalid	TRUE	/	FALSE	0	name92	could-be-large-92
+ attack.invalid	TRUE	/	FALSE	0	name93	could-be-large-93
+ attack.invalid	TRUE	/	FALSE	0	name94	could-be-large-94
+ attack.invalid	TRUE	/	FALSE	0	name95	could-be-large-95
+ attack.invalid	TRUE	/	FALSE	0	name96	could-be-large-96
+ attack.invalid	TRUE	/	FALSE	0	name97	could-be-large-97
+ attack.invalid	TRUE	/	FALSE	0	name98	could-be-large-98
+ attack.invalid	TRUE	/	FALSE	0	name99	could-be-large-99
+ attack.invalid	TRUE	/	FALSE	0	name100	could-be-large-100
+ attack.invalid	TRUE	/	FALSE	0	name101	could-be-large-101
+ attack.invalid	TRUE	/	FALSE	0	name102	could-be-large-102
+ attack.invalid	TRUE	/	FALSE	0	name103	could-be-large-103
+ attack.invalid	TRUE	/	FALSE	0	name104	could-be-large-104
+ attack.invalid	TRUE	/	FALSE	0	name105	could-be-large-105
+ attack.invalid	TRUE	/	FALSE	0	name106	could-be-large-106
+ attack.invalid	TRUE	/	FALSE	0	name107	could-be-large-107
+ attack.invalid	TRUE	/	FALSE	0	name108	could-be-large-108
+ attack.invalid	TRUE	/	FALSE	0	name109	could-be-large-109
+ attack.invalid	TRUE	/	FALSE	0	name110	could-be-large-110
+ attack.invalid	TRUE	/	FALSE	0	name111	could-be-large-111
+ attack.invalid	TRUE	/	FALSE	0	name112	could-be-large-112
+ attack.invalid	TRUE	/	FALSE	0	name113	could-be-large-113
+ attack.invalid	TRUE	/	FALSE	0	name114	could-be-large-114
+ attack.invalid	TRUE	/	FALSE	0	name115	could-be-large-115
+ attack.invalid	TRUE	/	FALSE	0	name116	could-be-large-116
+ attack.invalid	TRUE	/	FALSE	0	name117	could-be-large-117
+ attack.invalid	TRUE	/	FALSE	0	name118	could-be-large-118
+ attack.invalid	TRUE	/	FALSE	0	name119	could-be-large-119
+ attack.invalid	TRUE	/	FALSE	0	name120	could-be-large-120
+ attack.invalid	TRUE	/	FALSE	0	name121	could-be-large-121
+ attack.invalid	TRUE	/	FALSE	0	name122	could-be-large-122
+ attack.invalid	TRUE	/	FALSE	0	name123	could-be-large-123
+ attack.invalid	TRUE	/	FALSE	0	name124	could-be-large-124
+ attack.invalid	TRUE	/	FALSE	0	name125	could-be-large-125
+ attack.invalid	TRUE	/	FALSE	0	name126	could-be-large-126
+ attack.invalid	TRUE	/	FALSE	0	name127	could-be-large-127
+ attack.invalid	TRUE	/	FALSE	0	name128	could-be-large-128
+ attack.invalid	TRUE	/	FALSE	0	name129	could-be-large-129
+ attack.invalid	TRUE	/	FALSE	0	name130	could-be-large-130
+ attack.invalid	TRUE	/	FALSE	0	name131	could-be-large-131
+ attack.invalid	TRUE	/	FALSE	0	name132	could-be-large-132
+ attack.invalid	TRUE	/	FALSE	0	name133	could-be-large-133
+ attack.invalid	TRUE	/	FALSE	0	name134	could-be-large-134
+ attack.invalid	TRUE	/	FALSE	0	name135	could-be-large-135
+ attack.invalid	TRUE	/	FALSE	0	name136	could-be-large-136
+ attack.invalid	TRUE	/	FALSE	0	name137	could-be-large-137
+ attack.invalid	TRUE	/	FALSE	0	name138	could-be-large-138
+ attack.invalid	TRUE	/	FALSE	0	name139	could-be-large-139
+ attack.invalid	TRUE	/	FALSE	0	name140	could-be-large-140
+ attack.invalid	TRUE	/	FALSE	0	name141	could-be-large-141
+ attack.invalid	TRUE	/	FALSE	0	name142	could-be-large-142
+ attack.invalid	TRUE	/	FALSE	0	name143	could-be-large-143
+ attack.invalid	TRUE	/	FALSE	0	name144	could-be-large-144
+ attack.invalid	TRUE	/	FALSE	0	name145	could-be-large-145
+ attack.invalid	TRUE	/	FALSE	0	name146	could-be-large-146
+ attack.invalid	TRUE	/	FALSE	0	name147	could-be-large-147
+ attack.invalid	TRUE	/	FALSE	0	name148	could-be-large-148
+ attack.invalid	TRUE	/	FALSE	0	name149	could-be-large-149
+ attack.invalid	TRUE	/	FALSE	0	name150	could-be-large-150
+ attack.invalid	TRUE	/	FALSE	0	name151	could-be-large-151
+ </file>
+ <features>
+ cookies
+ </features>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <protocol crlf="headers">
+ GET /a/b/442 HTTP/1.1
+ Host: attack.invalid:35207
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Cookie: name150=could-beUse of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+-large-150; name149=could-be-large-149; name148=could-be-large-148; name147=could-be-large-147; name146=could-be-large-146; name145=could-be-large-145; name144=could-be-large-144; name143=could-be-large-143; name142=could-be-large-142; name141=could-be-large-141; name140=could-be-large-140; name139=could-be-large-139; name138=could-be-large-138; name137=could-be-large-137; name136=could-be-large-136; name135=could-be-large-135; name134=could-be-large-134; name133=could-be-large-133; name132=could-be-large-132; name131=could-be-large-131; name130=could-be-large-130; name129=could-be-large-129; name128=could-be-large-128; name127=could-be-large-127; name126=could-be-large-126; name125=could-be-large-125; name124=could-be-large-124; name123=could-be-large-123; name122=could-be-large-122; name121=could-be-large-121; name120=could-be-large-120; name119=could-be-large-119; name118=could-be-large-118; name117=could-be-large-117; name116=could-be-large-116; name115=could-be-large-115; name114=could-be-large-114; name113=could-be-large-113; name112=could-be-large-112; name111=could-be-large-111; name110=could-be-large-110; name109=could-be-large-109; name108=could-be-large-108; name107=could-be-large-107; name106=could-be-large-106; name105=could-be-large-105; name104=could-be-large-104; name103=could-be-large-103; name102=could-be-large-102; name101=could-be-large-101; name100=could-be-large-100; name99=could-be-large-99; name98=could-be-large-98; name97=could-be-large-97; name96=could-be-large-96; name95=could-be-large-95; name94=could-be-large-94; name93=could-be-large-93; name92=could-be-large-92; name91=could-be-large-91; name90=could-be-large-90; name89=could-be-large-89; name88=could-be-large-88; name87=could-be-large-87; name86=could-be-large-86; name85=could-be-large-85; name84=could-be-large-84; name83=could-be-large-83; name82=could-be-large-82; name81=could-be-large-81; name80=could-be-large-80; name79=could-be-large-79; name78=could-be-large-78; name77=could-be-large-77; name76=could-be-large-76; name75=could-be-large-75; name74=could-be-large-74; name73=could-be-large-73; name72=could-be-large-72; name71=could-be-large-71; name70=could-be-large-70; name69=could-be-large-69; name68=could-be-large-68; name67=could-be-large-67; name66=could-be-large-66; name65=could-be-large-65; name64=could-be-large-64; name63=could-be-large-63; name62=could-be-large-62; name61=could-be-large-61; name60=could-be-large-60; name59=could-be-large-59; name58=could-be-large-58; name57=could-be-large-57; name56=could-be-large-56; name55=could-be-large-55; name54=could-be-large-54; name53=could-be-large-53; name52=could-be-large-52; name51=could-be-large-51; name50=could-be-large-50; name49=could-be-large-49; name48=could-be-large-48; name47=could-be-large-47; name46=could-be-large-46; name45=could-be-large-45; name44=could-be-large-44; name43=could-be-large-43; name42=could-be-large-42; name41=could-be-large-41; name40=could-be-large-40; name39=could-be-large-39; name38=could-be-large-38; name37=could-be-large-37; name36=could-be-large-36; name35=could-be-large-35; name34=could-be-large-34; name33=could-be-large-33; name32=could-be-large-32; name31=could-be-large-31; name30=could-be-large-30; name29=could-be-large-29; name28=could-be-large-28; name27=could-be-large-27; name26=could-be-large-26; name25=could-be-large-25; name24=could-be-large-24; name23=could-be-large-23; name22=could-be-large-22; name21=could-be-large-21; name20=could-be-large-20; name19=could-be-large-19; name18=could-be-large-18; name17=could-be-large-17; name16=could-be-large-16; name15=could-be-large-15; name14=could-be-large-14; name13=could-be-large-13; name12=could-be-large-12; name11=could-be-large-11; name10=could-be-large-10; name9=could-be-large-9; name8=could-be-large-8; name7=could-be-large-7; name6=could-be-large-6; name5=could-be-large-5; name4=could-be-large-4; name3=could-be-large-3; name2=could-be-large-2; name1=could-be-large-1
+ </protocol>
+ <limits>
+ Allocations: 1100
+ </limits>
+ </verify>
+ </testcase>
+=== End of file test442
+test 0003 [HTTP POST with auth and contents but with content-length set to 0]
+
+curl returned 52, when expecting 0
+ 3: exit FAILED
+== Contents of files in the log/18/ directory after test 3
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/18/valgrind451 ../src/curl -q --output log/18/curl451.out  --include --trace-ascii log/18/trace451 --trace-time http://127.0.0.1:34675/451 --variable what@log/18/junk --variable second=hello --variable second=again --expand-data "--{{what:trim:json}}22{{none}}--{{second}}{{what:trim:url}}" > log/18/stdout451 2> log/18/stderr451
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:14:22.132463 ====> Client connect
+ 23:14:22.132507 accept_connection 3 returned 4
+ 23:14:22.154013 Read 97 bytes
+ 23:14:22.154049 Process 97 bytes request
+ 23:14:22.154063 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:22.154110 Are-we-friendly question received
+ 23:14:22.154153 Wrote request (97 bytes) input to log/18/server.input
+ 23:14:22.154179 Identifying ourselves as friends
+ 23:14:22.154498 Response sent (57 bytes) and written to log/18/server.response
+ 23:14:22.154513 special request received, no persistency
+ 23:14:22.154521 ====> Client disconnect 0
+ 00:05:43.358140 ====> Client connect
+ 00:05:43.358177 accept_connection 3 returned 4
+ 00:05:44.300126 Read 230 bytes
+ 00:05:44.300191 Process 230 bytes request
+ 00:05:44.300225 Got request: POST /3 HTTP/1.1
+ 00:05:44.300244 Serve test number 3 part 0
+ 00:05:44.300272 fopen() failed with error (2) No such file or directory
+ 00:05:44.300281   Could not open test file 3
+ 00:05:44.300289 - request found to be complete (3)
+ 00:05:44.300300 fopen() failed with error (2) No such file or directory
+ 00:05:44.300307   Could not open test file 3
+ 00:05:44.300316 Found Content-Length: 37 in the request
+ 00:05:44.300360 Wrote request (230 bytes) input to log/18/server.input
+ 00:05:44.300560 Send response test3 section <data>
+ 00:05:44.300578 fopen() failed with error (2) No such file or directory
+ 00:05:44.300587 instructed to close connection after server-reply
+ 00:05:44.300596 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:34675...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 34675) from 127.0.0.1 port 56394
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:34675
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:34675 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436910
+=== End of file http_verify.out
+=== Start of file junk
+  
+=== End of file junk
+=== Start of file server.cmd
+ Testnum 451
+=== End of file server.cmd
+=== Start of file server.input
+ POST /3 HTTP/1.1
+ Host: 127.0.0.1:43173
+ Authorization: Basic ZmFrZTotdXNlcg==
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Content-Length: 37
+ Content-Type: application/x-www-form-urlencoded
+ fooo=mooo&pooo=clue&doo=%20%20%20++++
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436910
+=== End of file server.response
+=== Start of file test451
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ HTTP
+ variables
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ <data crlf="headers">
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Last-Modified: Tue, 13 Jun 2000 12:10:00 GMT
+ ETag: "21025-dc7-39462498"
+ Accept-Ranges: bytes
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ Funny-head: yesyes
+ -foo-
+ </data>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Variable from file that is JSON and URL encoded (with NUL byte)
+ </name>
+ <file name="log/18/junk">
+  
+ </file>
+ <command>
+ http://127.0.0.1:34675/451 --variable what@log/18/junk --variable second=hello --variable second=again --expand-daUse of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+ta "--{{what:trim:json}}22{{none}}--{{second}}{{what:trim:url}}"
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <protocol crlf="yes" nonewline="yes">
+ POST /451 HTTP/1.1
+ Host: 127.0.0.1:34675
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Content-Length: 74
+ Content-Type: application/x-www-form-urlencoded
+ --\u0001\u0002\u0003\u0000\u0004\u0005\u000622--again%01%02%03%00%04%05%06
+ </protocol>
+ </verify>
+ </testcase>
+=== End of file test451
+=== Start of file trace3
+ 00:05:43.218968 *   Trying 127.0.0.1:43173...
+ 00:05:44.093655 * Established connection to 127.0.0.1 (127.0.0.1 port 43173) from 127.0.0.1 port 52508
+ 00:05:44.251661 * using HTTP/1.x
+ 00:05:44.333237 * Server auth using Basic with user 'fake'
+ 00:05:44.680015 => Send header, 193 bytes (0xc1)
+ 0000: POST /3 HTTP/1.1
+ 0012: Host: 127.0.0.1:43173
+ 0029: Authorization: Basic ZmFrZTotdXNlcg==
+ 0050: User-Agent: curl/8.23.0-DEV
+ 006d: Accept: */*
+ 007a: Content-Length: 37
+ 008e: Content-Type: application/x-www-form-urlencoded
+ 00bf:
+ 00:05:44.755509 => Send data, 37 bytes (0x25)
+ 0000: fooo=mooo&pooo=clue&doo=%20%20%20++++
+ 00:05:44.800013 * upload completely sent off: 37 bytes
+ 00:05:45.078141 * Empty reply from server
+ 00:05:45.238736 * shutting down connection #0
+=== End of file trace3
+test 0002 [HTTP GET with user and password]
+
+curl returned 52, when expecting 0
+ 2: exit FAILED
+== Contents of files in the log/19/ directory after test 2
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/19/valgrind450 ../src/curl -q --output log/19/curl450.out  --include --trace-ascii log/19/trace450 --trace-time http://127.0.0.1:45217/450 --variable what@log/19/junk --expand-data "{{what:trim:url}}" > log/19/stdout450 2> log/19/stderr450
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:41:12.108467 ====> Client connect
+ 23:41:12.108512 accept_connection 3 returned 4
+ 23:41:12.126012 Read 97 bytes
+ 23:41:12.126050 Process 97 bytes request
+ 23:41:12.126064 Got request: GET /verifiedserver HTTP/1.1
+ 23:41:12.126114 Are-we-friendly question received
+ 23:41:12.126159 Wrote request (97 bytes) input to log/19/server.input
+ 23:41:12.126185 Identifying ourselves as friends
+ 23:41:12.126260 Response sent (57 bytes) and written to log/19/server.response
+ 23:41:12.126278 special request received, no persistency
+ 23:41:12.126287 ====> Client disconnect 0
+ 00:05:43.638183 ====> Client connect
+ 00:05:43.638221 accept_connection 3 returned 4
+ 00:05:44.445836 Read 119 bytes
+ 00:05:44.445897 Process 119 bytes request
+ 00:05:44.445922 Got request: GET /2 HTTP/1.1
+ 00:05:44.445932 Serve test number 2 part 0
+ 00:05:44.445958 fopen() failed with error (2) No such file or directory
+ 00:05:44.445967   Could not open test file 2
+ 00:05:44.445976 - request found to be complete (2)
+ 00:05:44.445986 fopen() failed with error (2) No such file or directory
+ 00:05:44.445994   Could not open test file 2
+ 00:05:44.446072 Wrote request (119 bytes) input to log/19/server.input
+ 00:05:44.446311 Send response test2 section <data>
+ 00:05:44.446328 fopen() failed with error (2) No such file or directory
+ 00:05:44.446337 instructed to close connection after server-reply
+ 00:05:44.446346 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:45217...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 45217) from 127.0.0.1 port 37398
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:45217
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:45217 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 451720
+=== End of file http_verify.out
+=== Start of file junk
+         space with space
+=== End of file junk
+=== Start of file server.cmd
+ Testnum 450
+=== End of file server.cmd
+=== Start of file server.input
+ GET /2 HTTP/1.1
+ Host: 127.0.0.1:43701
+ Authorization: Basic ZmFrZTp1c2Vy
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 451720
+=== End of file server.response
+=== Start of file test450
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ HTTP
+ variables
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ <data crlf="headers">
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Last-Modified: Tue, 13 Jun 2000 12:10:00 GMT
+ ETag: "21025-dc7-39462498"
+ Accept-Ranges: bytes
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ Funny-head: yesyes
+ -foo-
+ </data>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Variable from file that is trimmed and URL encoded
+ </name>
+ <file name="log/19/junk">
+         space with space
+ </file>
+ <command>
+ http://127.0.0.1:45217/450 --variable what@log/19/junk --expand-data "{{what:trim:url}}"
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <protocol crlf="yes" nonewline="yes">
+ POST /450 HTTP/1.1
+ Host: 127.0.0.1:45217
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Content-Length: 20
+ Content-Type: application/x-www-form-urlencoded
+ space%20with%20space
+ </protocol>
+ </verify>
+ </testcase>
+=== End of file test450
+=== Start of file trace2
+ 00:05:43.479663 *   Trying 127.0.0.1:43701...
+ 00:05:44.313275 * Established connection to 127.0.0.1 (127.0.0.1 port 43701) from 127.0.0.1 port 41136
+ 00:05:44.512956 * using HTTP/1.x
+ 00:05:44.625620 * Server auth using Basic with user 'fake'
+ 00:05:44.804060 => Send header, 119 bytes (0x77)
+ 0000: GET /2 HTTP/1.1
+ 0011: Host: 127.0.0.1:43701
+ 0028: Authorization: Basic ZmFrZTp1c2Vy
+ 004b: User-Agent: curl/8.23.0-DEV
+ 0068: Accept: */*
+ 0075:
+ 00:05:44.929756 * Request completely sent off
+ 00:05:45.162973 * Empty reply from server
+ 00:05:45.331816 * shutting down connection #0
+=== End of file trace2
+test 0004 [Replaced internal and added custom HTTP headers]
+
+curl returned 52, when expecting 0
+ 4: exit FAILED
+== Contents of files in the log/17/ directory after test 4
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/17/valgrind454 ../src/curl -q --output log/17/curl454.out  --include --trace-ascii log/17/trace454 --trace-time http://127.0.0.1:36491/454 --variable what=hello --expand-data "--{{what:trim,url}}" > log/17/stdout454 2> log/17/stderr454
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:14:23.549270 ====> Client connect
+ 23:14:23.549325 accept_connection 3 returned 4
+ 23:14:23.574096 Read 97 bytes
+ 23:14:23.574138 Process 97 bytes request
+ 23:14:23.574152 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:23.574161 Are-we-friendly question received
+ 23:14:23.574201 Wrote request (97 bytes) input to log/17/server.input
+ 23:14:23.574226 Identifying ourselves as friends
+ 23:14:23.574311 Response sent (57 bytes) and written to log/17/server.response
+ 23:14:23.574322 special request received, no persistency
+ 23:14:23.574331 ====> Client disconnect 0
+ 00:05:43.933919 ====> Client connect
+ 00:05:43.933953 accept_connection 3 returned 4
+ 00:05:44.789837 Read 157 bytes
+ 00:05:44.789900 Process 157 bytes request
+ 00:05:44.789926 Got request: GET /4 HTTP/1.1
+ 00:05:44.789960 Serve test number 4 part 0
+ 00:05:44.789993 fopen() failed with error (2) No such file or directory
+ 00:05:44.790002   Could not open test file 4
+ 00:05:44.790039 - request found to be complete (4)
+ 00:05:44.790053 fopen() failed with error (2) No such file or directory
+ 00:05:44.790062   Could not open test file 4
+ 00:05:44.790108 Wrote request (157 bytes) input to log/17/server.input
+ 00:05:44.790140 Send response test4 section <data>
+ 00:05:44.790152 fopen() failed with error (2) No such file or directory
+ 00:05:44.790161 instructed to close connection after server-reply
+ 00:05:44.790169 ====> Client disconnect 0
+ 00:05:46.Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+020442 ====> Client connect
+ 00:05:46.020469 accept_connection 3 returned 4
+ 00:05:46.045839 Read 157 bytes
+ 00:05:46.045878 Process 157 bytes request
+ 00:05:46.045892 Got request: GET /4 HTTP/1.1
+ 00:05:46.045901 Serve test number 4 part 0
+ 00:05:46.045915 fopen() failed with error (2) No such file or directory
+ 00:05:46.045959   Could not open test file 4
+ 00:05:46.045969 - request found to be complete (4)
+ 00:05:46.045980 fopen() failed with error (2) No such file or directory
+ 00:05:46.045989   Could not open test file 4
+ 00:05:46.046004 Wrote request (157 bytes) input to log/17/server.input
+ 00:05:46.046020 Send response test4 section <data>
+ 00:05:46.046030 fopen() failed with error (2) No such file or directory
+ 00:05:46.046039 instructed to close connection after server-reply
+ 00:05:46.046047 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:36491...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 36491) from 127.0.0.1 port 43048
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:36491
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:36491 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436917
+=== End of file http_verify.out
+=== Start of file server.cmd
+ Testnum 454
+=== End of file server.cmd
+=== Start of file server.input
+ GET /4 HTTP/1.1
+ Host: 127.0.0.1:32957
+ User-Agent: curl/8.23.0-DEV
+ extra-header: here
+ Accept: replaced
+ X-Custom-Header:
+ X-Test: foo;
+ X-Test2: foo;
+ GET /4 HTTP/1.1
+ Host: 127.0.0.1:32957
+ User-Agent: curl/8.23.0-DEV
+ extra-header: here
+ Accept: replaced
+ X-Custom-Header:
+ X-Test: foo;
+ X-Test2: foo;
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436917
+=== End of file server.response
+=== Start of file test454
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ variables
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <name>
+ Variable using illegal function separator
+ </name>
+ <command>
+ http://127.0.0.1:36491/454 --variable what=hello --expand-data "--{{what:trim,url}}"
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <errorcode>
+ 2
+ </errorcode>
+ </verify>
+ </testcase>
+=== End of file test454
+=== Start of file trace4
+ 00:05:43.811534 *   Trying 127.0.0.1:32957...
+ 00:05:44.650779 * Established connection to 127.0.0.1 (127.0.0.1 port 32957) from 127.0.0.1 port 46880
+ 00:05:44.812587 * using HTTP/1.x
+ 00:05:45.148437 => Send header, 157 bytes (0x9d)
+ 0000: GET /4 HTTP/1.1
+ 0011: Host: 127.0.0.1:32957
+ 0028: User-Agent: curl/8.23.0-DEV
+ 0045: extra-header: here
+ 0059: Accept: replaced
+ 006b: X-Custom-Header:
+ 007d: X-Test: foo;
+ 008c: X-Test2: foo;
+ 009b:
+ 00:05:45.239007 * Request completely sent off
+ 00:05:45.518949 * Empty reply from server
+ 00:05:45.694839 * shutting down connection #0
+ 00:05:46.379232 * Hostname 127.0.0.1 was found in DNS cache
+ 00:05:46.379543 *   Trying 127.0.0.1:32957...
+ 00:05:46.401689 * Established connection to 127.0.0.1 (127.0.0.1 port 32957) from 127.0.0.1 port 38734
+ 00:05:46.402131 * using HTTP/1.x
+ 00:05:46.402372 => Send header, 157 bytes (0x9d)
+ 0000: GET /4 HTTP/1.1
+ 0011: Host: 127.0.0.1:32957
+ 0028: User-Agent: curl/8.23.0-DEV
+ 0045: extra-header: here
+ 0059: Accept: replaced
+ 006b: X-Custom-Header:
+ 007d: X-Test: foo;
+ 008c: X-Test2: foo;
+ 009b:
+ 00:05:46.403009 * Request completely sent off
+ 00:05:46.478595 * Empty reply from server
+ 00:05:46.478998 * shutting down connection #1
+=== End of file trace4
+test 0005 [HTTP over proxy]
+
+curl returned 52, when expecting 0
+ 5: exit FAILED
+== Contents of files in the log/16/ directory after test 5
+=== Start of file cmd
+ -d 1{{FUNVALUE}}2{{VALUE2}}3{{CURL_NOT_SET}}4{{BLANK}}5\{{verbatim}}6{{not.good}}7{{}}
+=== End of file cmd
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/16/valgrind449 ../src/curl -q --output log/16/curl449.out  --include --trace-ascii log/16/trace449 --trace-time http://127.0.0.1:43599/449 -K log/16/cmd > log/16/stdout449 2> log/16/stderr449
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:14:20.741986 ====> Client connect
+ 23:14:20.742038 accept_connection 3 returned 4
+ 23:14:20.851370 Read 97 bytes
+ 23:14:20.851405 Process 97 bytes request
+ 23:14:20.851418 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:20.851427 Are-we-friendly question received
+ 23:14:20.851466 Wrote request (97 bytes) input to log/16/server.input
+ 23:14:20.851491 Identifying ourselves as friends
+ 23:14:20.851560 Response sent (57 bytes) and written to log/16/server.response
+ 23:14:20.851571 special request received, no persistency
+ 23:14:20.851579 ====> Client disconnect 0
+ 00:05:45.813647 ====> Client connect
+ 00:05:45.813679 accept_connection 3 returned 4
+ 00:05:46.716500 Read 154 bytes
+ 00:05:46.716547 Process 154 bytes request
+ 00:05:46.716568 Got request: GET http://127.0.0.1:46145/we/want/that/page/5 HTTP/1.1
+ 00:05:46.716578 Serve test number 5 part 0
+ 00:05:46.716606 fopen() failed with error (2) No such file or directory
+ 00:05:46.716615   Could not open test file 5
+ 00:05:46.716624 - request found to be complete (5)
+ 00:05:46.716634 fopen() failed with error (2) No such file or directory
+ 00:05:46.716642   Could not open test file 5
+ 00:05:46.716697 Wrote request (154 bytes) input to log/16/server.input
+ 00:05:46.716728 Send response test5 section <data>
+ 00:05:46.716740 fopen() failed with error (2) No such file or directory
+ 00:05:46.716748 instructed to close connection after server-reply
+ 00:05:46.716757 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:43599...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 43599) from 127.0.0.1 port 51788
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:43599
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:43599 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436925
+=== End of file http_verify.out
+=== Start of file server.cmd
+ Testnum 449
+=== End of file server.cmd
+=== Start of file server.input
+ GET http://127.0.0.1:46145/we/want/that/page/5 HTTP/1.1
+ Host: 127.0.0.1:46145
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Proxy-Connection: Keep-Alive
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436925
+=== End of file server.response
+=== Start of file test449
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ HTTP
+ variables
+ --config
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ <data crlf="headers">
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Last-Modified: Tue, 13 Jun 2000 12:10:00 GMT
+ ETag: "21025-dc7-39462498"
+ Accept-Ranges: bytes
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ Funny-head: yesyes
+ -foo-
+ </data>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <setenv>
+ FUNVALUE=contents
+ VALUE2=curl
+ BLANK=
+ CURL_NOT_SET
+ </setenv>
+ <name>
+ Environment variables in config file w/o [expand]
+ </name>
+ <file name="log/16/cmd">
+ -d 1{{FUNVALUE}}2{{VALUE2}}3{{CURL_NOT_SET}}4{{BLANK}}5\{{verbatim}}6{{not.good}}7{{}}
+ </file>
+ <command>
+ http://127.0.0.1:43599/449 -K log/16/cmd
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <protocol crlf="yes" nonewline="yes">
+ POST /449 HTTP/1.1
+ Host: 127.0.0.1:43599
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Content-Length: 83
+ Content-Type: application/x-www-form-urlencoded
+ 1{{FUNVALUE}}2{{VALUE2}}3{{CURL_NOT_SET}}4{{BLANK}}5\{{verbatim}}6{{not.good}}7{{}}
+ </protocol>
+ </verify>
+ </testcase>
+=== End of file test4Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
+49
+=== Start of file trace5
+ 00:05:44.738037 *   Trying 127.0.0.1:46145...
+ 00:05:45.608655 * Established connection to 127.0.0.1 (127.0.0.1 port 46145) from 127.0.0.1 port 48754
+ 00:05:45.781074 * using HTTP/1.x
+ 00:05:46.099556 => Send header, 154 bytes (0x9a)
+ 0000: GET http://127.0.0.1:46145/we/want/that/page/5 HTTP/1.1
+ 0039: Host: 127.0.0.1:46145
+ 0050: User-Agent: curl/8.23.0-DEV
+ 006d: Accept: */*
+ 007a: Proxy-Connection: Keep-Alive
+ 0098:
+ 00:05:46.175254 * Request completely sent off
+ 00:05:46.367515 * Empty reply from server
+ 00:05:46.492209 * shutting down connection #0
+=== End of file trace5
+test 0007 [HTTP with cookie parser and header recording]
+
+curl returned 52, when expecting 0
+ 7: exit FAILED
+== Contents of files in the log/14/ directory after test 7
+=== Start of file cmd
+ --variable %FUNVALUE
+ --variable %VALUE2
+ --expand-data 1{{FUNVALUE}}2{{VALUE2}}3{{curl_NOT_SET}}4{{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}}5{{broken
+=== End of file cmd
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/14/valgrind448 ../src/curl -q --output log/14/curl448.out  --include --trace-ascii log/14/trace448 --trace-time http://127.0.0.1:36769/448 -K log/14/cmd > log/14/stdout448 2> log/14/stderr448
+=== End of file commands.log
+=== Start of file http_server.log
+ 23:14:21.002528 ====> Client connect
+ 23:14:21.002597 accept_connection 3 returned 4
+ 23:14:21.002624 Read 97 bytes
+ 23:14:21.002635 Process 97 bytes request
+ 23:14:21.002650 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:21.002682 Are-we-friendly question received
+ 23:14:21.002710 Wrote request (97 bytes) input to log/14/server.input
+ 23:14:21.002750 Identifying ourselves as friends
+ 23:14:21.002865 Response sent (57 bytes) and written to log/14/server.response
+ 23:14:21.002879 special request received, no persistency
+ 23:14:21.002888 ====> Client disconnect 0
+ 00:05:46.624129 ====> Client connect
+ 00:05:46.624159 accept_connection 3 returned 4
+ 00:05:47.319787 Read 92 bytes
+ 00:05:47.319835 Process 92 bytes request
+ 00:05:47.319860 Got request: GET /we/want/7 HTTP/1.1
+ 00:05:47.319870 Serve test number 7 part 0
+ 00:05:47.319895 fopen() failed with error (2) No such file or directory
+ 00:05:47.319942   Could not open test file 7
+ 00:05:47.319953 - request found to be complete (7)
+ 00:05:47.319964 fopen() failed with error (2) No such file or directory
+ 00:05:47.319973   Could not open test file 7
+ 00:05:47.320068 Wrote request (92 bytes) input to log/14/server.input
+ 00:05:47.320106 Send response test7 section <data>
+ 00:05:47.320119 fopen() failed with error (2) No such file or directory
+ 00:05:47.320128 instructed to close connection after server-reply
+ 00:05:47.320137 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:36769...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 36769) from 127.0.0.1 port 45518
+ * using HTTP/1.x
+ > GET /verifiedserver HTTP/1.1
+ > Host: 127.0.0.1:36769
+ > User-Agent: curl/8.23.0-DEV
+ > Accept: */*
+ >
+ * Request completely sent off
+ < HTTP/1.1 200 OK
+ < Content-Length: 18
+ <
+ { [18 bytes data]
+ * Connection #0 to host 127.0.0.1:36769 left intact
+=== End of file http_verify.log
+=== Start of file http_verify.out
+ WE ROOLZ: 436926
+=== End of file http_verify.out
+=== Start of file server.cmd
+ Testnum 448
+=== End of file server.cmd
+=== Start of file server.input
+ GET /we/want/7 HTTP/1.1
+ Host: 127.0.0.1:34075
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+=== End of file server.input
+=== Start of file server.response
+ HTTP/1.1 200 OK
+ Content-Length: 18
+ WE ROOLZ: 436926
+=== End of file server.response
+=== Start of file test448
+ <?xml version="1.0" encoding="US-ASCII"?>
+ <testcase>
+ <info>
+ <keywords>
+ HTTP
+ variables
+ --config
+ </keywords>
+ </info>
+ # Server-side
+ <reply>
+ <data crlf="headers">
+ HTTP/1.1 200 OK
+ Date: Tue, 09 Nov 2010 14:49:00 GMT
+ Server: test-server/fake
+ Last-Modified: Tue, 13 Jun 2000 12:10:00 GMT
+ ETag: "21025-dc7-39462498"
+ Accept-Ranges: bytes
+ Content-Length: 6
+ Connection: close
+ Content-Type: text/html
+ Funny-head: yesyes
+ -foo-
+ </data>
+ </reply>
+ # Client-side
+ <client>
+ <server>
+ http
+ </server>
+ <setenv>
+ FUNVALUE=contents
+ VALUE2=curl
+ </setenv>
+ <name>
+ Environment variables within config file, unbalanced braces
+ </name>
+ <file name="log/14/cmd">
+ --variable %FUNVALUE
+ --variable %VALUE2
+ --expand-data 1{{FUNVALUE}}2{{VALUE2}}3{{curl_NOT_SET}}4{{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}}5{{broken
+ </file>
+ <command>
+ http://127.0.0.1:36769/448 -K log/14/cmd
+ </command>
+ </client>
+ # Verify data after the test has been "shot"
+ <verify>
+ <protocol crlf="yes" nonewline="yes">
+ POST /448 HTTP/1.1
+ Host: 127.0.0.1:36769
+ User-Agent: curl/8.23.0-DEV
+ Accept: */*
+ Content-Length: 157
+ Content-Type: application/x-www-form-urlencoded
+ 1contents2curl34{{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}}5{{broken
+ </protocol>
+ </verify>
+ </testcase>
+=== End of file test448
+=== Start of file trace7
+ 00:05:44.107397 * WARNING: failed to open cookie file "none"
+ 00:05:45.946519 *   Trying 127.0.0.1:34075...
+ 00:05:46.306139 * Established connection to 127.0.0.1 (127.0.0.1 port 34075) from 127.0.0.1 port 60484
+ 00:05:46.477889 * using HTTP/1.x
+ 00:05:46.687466 => Send header, 92 bytes (0x5c)
+ 0000: GET /we/want/7 HTTP/1.1
+ 0019: Host: 127.0.0.1:34075
+ 0030: User-Agent: curl/8.23.0-DEV
+ 004d: Accept: */*
+ 005a:
+ 00:05:46.790796 * Request completely sent off
+ 00:05:46.945261 * Empty reply from server
+ 00:05:47.102714 * shutting down connection #0
+=== End of file trace7
+test 0013 [HTTP custom request 'DELETE']
+
+curl returned 52, when expecting 0
+ 13: exit FAILED
+== Contents of files in the log/8/ directory after test 13
+=== Start of file commands.log
+ ../libtool --mode=execute /usr/bin/valgrind --tool=memcheck --quiet --leak-check=yes --suppressions=./valgrind.supp --num-callers=16 --log-file=log/8/valgrind459 ../src/curl -q --output log/8/curl459.out  --include --trace-ascii log/8/trace459 --trace-time http://127.0.0.1:35649/459 --config log/8/config --silent > log/8/stdout459 2> log/8/stderr459
+=== End of file commands.log
+=== Start of file config
+ data = arg with space
+=== End of file config
+=== Start of file http_server.log
+ 23:14:29.334198 ====> Client connect
+ 23:14:29.334241 accept_connection 3 returned 4
+ 23:14:29.334263 Read 97 bytes
+ 23:14:29.334273 Process 97 bytes request
+ 23:14:29.334286 Got request: GET /verifiedserver HTTP/1.1
+ 23:14:29.334295 Are-we-friendly question received
+ 23:14:29.334319 Wrote request (97 bytes) input to log/8/server.input
+ 23:14:29.334338 Identifying ourselves as friends
+ 23:14:29.334418 Response sent (57 bytes) and written to log/8/server.response
+ 23:14:29.334429 special request received, no persistency
+ 23:14:29.334437 ====> Client disconnect 0
+ 00:05:46.758239 ====> Client connect
+ 00:05:46.758268 accept_connection 3 returned 4
+ 00:05:47.433901 Read 93 bytes
+ 00:05:47.433948 Process 93 bytes request
+ 00:05:47.433969 Got request: DELETE /want/13 HTTP/1.1
+ 00:05:47.433987 Serve test number 13 part 0
+ 00:05:47.434012 fopen() failed with error (2) No such file or directory
+ 00:05:47.434027   Could not open test file 13
+ 00:05:47.434036 - request found to be complete (13)
+ 00:05:47.434046 fopen() failed with error (2) No such file or directory
+ 00:05:47.434054   Could not open test file 13
+ 00:05:47.434098 Wrote request (93 bytes) input to log/8/server.input
+ 00:05:47.434128 Send response test13 section <data>
+ 00:05:47.434140 fopen() failed with error (2) No such file or directory
+ 00:05:47.434148 instructed to close connection after server-reply
+ 00:05:47.434156 ====> Client disconnect 0
+=== End of file http_server.log
+=== Start of file http_verify.log
+ *   Trying 127.0.0.1:35649...
+ * Established connection to 127.0.0.1 (127.0.0.1 port 35649) from Use of uninitialized value $testname in scalar chomp at ./runtests.pl line 1266.
