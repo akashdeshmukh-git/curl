@@ -289,7 +289,11 @@ static int get_alg_id_by_name(const char *name)
   int i;
 
   for(i = 0; algs[i].name; i++) {
-    if((n == strlen(algs[i].name) && !strncmp(algs[i].name, name, n)))
+    /* ⚡ Bolt optimization:
+     * Avoid calculating strlen(algs[i].name) on every iteration.
+     * Instead, check for exact match by verifying the null terminator
+     * sits precisely at index 'n' after strncmp. */
+    if(!strncmp(algs[i].name, name, n) && algs[i].name[n] == '\0')
       return algs[i].id;
   }
   return 0; /* not found */
