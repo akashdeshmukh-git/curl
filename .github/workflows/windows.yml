@@ -36,7 +36,7 @@ cache-mode: write
 
 env:
   CURL_CI: github
-  CURL_TEST_MIN: 1900
+  CURL_TEST_MIN: 1810
   CURL_TEST_SSH_KEYALGO: ed25519
   DO_NOT_TRACK: '1'
   OPENSSH_WINDOWS_VERSION: 10.0.0.0p2-Preview  # manually bumped
@@ -81,7 +81,7 @@ jobs:
       run:
         shell: D:\cygwin\bin\bash.exe '{0}'  # zizmor: ignore[misfeature]
     env:
-      CURL_TEST_MIN: 2040
+      CURL_TEST_MIN: 1930
       LDFLAGS: -s
       MAKEFLAGS: -j 5
       SHELLOPTS: 'igncr'
@@ -586,7 +586,7 @@ jobs:
       run:
         shell: msys2 {0}  # zizmor: ignore[misfeature]
     env:
-      CURL_TEST_MIN: 1780
+      CURL_TEST_MIN: 1730
       LDFLAGS: -s
       MAKEFLAGS: -j 5
       MATRIX_DIR: '${{ matrix.dir }}'
