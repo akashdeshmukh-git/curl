@@ -65,6 +65,15 @@ struct rtsp_conn {
   BIT(in_header);
 };
 
+static void rtsp_rtp_reset(struct rtsp_conn *rtspc)
+{
+  rtspc->rtp_channel = -1;
+  rtspc->rtp_len = 0;
+  rtspc->state = RTP_PARSE_SKIP;
+  rtspc->in_header = FALSE;
+  curlx_dyn_reset(&rtspc->buf);
+}
+
 /* RTSP transfer data */
 struct RTSP {
   uint32_t CSeq_sent; /* CSeq of this request */
@@ -150,7 +159,7 @@ static CURLcode rtsp_connect(struct Curl_easy *data, bool *done)
   if(data->state.rtsp_next_server_CSeq == 0)
     data->state.rtsp_next_server_CSeq = 1;
 
-  rtspc->rtp_channel = -1;
+  rtsp_rtp_reset(rtspc);
   *done = TRUE;
   return CURLE_OK;
 }
@@ -191,6 +200,8 @@ static CURLcode rtsp_done(struct Curl_easy *data,
       return CURLE_RECV_ERROR;
     }
   }
+
+  rtsp_rtp_reset(rtspc);
 
   return result;
 }
@@ -442,6 +453,13 @@ static CURLcode rtsp_do(struct Curl_easy *data, bool *done)
   *done = TRUE;
   if(!rtsp)
     return CURLE_FAILED_INIT;
+
+  if(rtspreq != RTSPREQ_RECEIVE) {
+    struct rtsp_conn *rtspc =
+      Curl_conn_meta_get(data->conn, CURL_META_RTSP_CONN);
+    if(rtspc)
+      rtsp_rtp_reset(rtspc);
+  }
 
   /* Initialize a dynamic send buffer */
   curlx_dyn_init(&req_buffer, DYN_RTSP_REQ_HEADER);
